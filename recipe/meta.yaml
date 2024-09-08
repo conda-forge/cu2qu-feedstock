@@ -13,11 +13,12 @@ build:
   entry_points:
     - cu2qu = cu2qu.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python

@@ -22,6 +22,7 @@ requirements:
   host:
     - pip
     - python
+    - setuptools
     - setuptools-scm
   run:
     - fonttools >=3.32.0

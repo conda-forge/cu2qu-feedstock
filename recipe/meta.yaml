@@ -12,7 +12,7 @@ source:
 build:
   entry_points:
     - cu2qu = cu2qu.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 4
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
   host:
     - pip
     - python
-    - setuptools
+    - setuptools <80
     - setuptools-scm
   run:
     - fonttools >=3.32.0

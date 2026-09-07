@@ -6,14 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cu2qu-{{ version }}.zip
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/cu2qu-{{ version }}.zip
   sha256: 1df562d99bd6059226088f443702bf51cfdd8cc63623f23137459a78d7bf5808
 
 build:
   entry_points:
     - cu2qu = cu2qu.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 4
 
 requirements:
   build:
@@ -22,7 +22,7 @@ requirements:
   host:
     - pip
     - python
-    - setuptools
+    - setuptools <80
     - setuptools-scm
   run:
     - fonttools >=3.32.0
